@@ -1,0 +1,24 @@
+{
+  "name": "pw2-aula-github",
+  "version": "1.0.0",
+  "description": "Aula de pw2 introduçao ao github",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucas1375/pw2-aula-github.git"
+  },
+  "keywords": [
+    "git",
+    "github",
+    "pw2"
+  ],
+  "author": "Lucas Santos da Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucas1375/pw2-aula-github/issues"
+  },
+  "homepage": "https://github.com/lucas1375/pw2-aula-github#readme"
+}
