@@ -12,9 +12,9 @@ PARAMETROS METODO DEFINE
 3-REGRAS DO CAMPO DA TABELA (NULL, NOT NULL)
 */
 const  modelCategoria = connection.define(
-    'tbl_categoria',
+    'Cliente',
     {
-        cod_categoria:{
+        CPF:{
 
             type: Sequelize.INTEGER,
 
@@ -24,13 +24,37 @@ const  modelCategoria = connection.define(
 
         },
 
-        nome_categoria:{
+        Nome:{
 
-            type: Sequelize.STRING(100),
+            type: Sequelize.STRING(50),
 
-            allowNull: false
+            allowNull: true
 
-        }
+        },
+
+        Endereco:{
+            
+            type: Sequelize.STRING(80),
+
+            allowNull: true
+        },
+
+        RG:{
+            
+            type: Sequelize.STRING(16),
+
+            allowNull: true
+        },
+
+
+        cod_cliente:{
+            
+            type: Sequelize.STRING(5),
+
+            allowNull: true
+        },
+
+        
     }
 );
 
