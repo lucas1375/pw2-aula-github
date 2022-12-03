@@ -12,12 +12,13 @@ PARAMETROS DO SEQUELIZE
     4.2 - TIPO DO BANCO (dialect)
 */
 const connection = new Sequelize(
-                                    'bd_libri_api', 
+                                    'tb_livraria', 
                                     'root', 
                                     '',
                                     {
                                         host:'localhost',
-                                        dialect:'mysql'
+                                        dialect:'mysql',
+                                        timezone: '-03:00'
                                     }
                                 );
 

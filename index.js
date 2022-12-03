@@ -1,13 +1,17 @@
 /*IMPORTA O PACOTE DO EXPRESS PARA O SCRIPT index.js*/
 const express = require('express');
+const routesCategoria = require('./route/routesCategorias');
 
 /*TORNA O EXPRESS EXECUTÁVEL DENTRO DO SCRIPT inxdex.js
 ATRAVÉS DA CONSTANTE app
 */
 const app = express();
 
-/** ROTAS DE CRUD DE CATEGORIA **/
+app.use(express.json());
 
+console.log('teste de github')
+
+app.use('/', routesCategoria);
 
 /** EXEMPLOS DE ROTA **/
 // app.get('/', function (req, res) {
@@ -26,5 +30,5 @@ PARAMETROS DO listem
 2 - CALLBACK (OPCIONAL)
 */
 app.listen(3000, ()=>{
-    console.log('SERVIDOR RODANDO!');
+    console.log('SERVIDOR RODANDO EM - http://localhost:3000');
 });
