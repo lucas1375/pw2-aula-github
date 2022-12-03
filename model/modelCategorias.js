@@ -19,7 +19,7 @@ const modelCategoria = connection.define(
 
             type: Sequelize.INTEGER,
             primaryKey: true,
-            autoIncrement: false
+            autoIncrement: true
         },
         
         Nome:{

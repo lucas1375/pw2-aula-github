@@ -12,7 +12,7 @@ PARAMETROS DO SEQUELIZE
     4.2 - TIPO DO BANCO (dialect)
 */
 const connection = new Sequelize(
-                                    'tb_livraria', 
+                                    'bd_livraria', 
                                     'root', 
                                     '',
                                     {

@@ -97,7 +97,7 @@ router.get('/listarCategoriaNOME/:CPF', (req, res)=>{
 
     let {CPF} = req.params;
 
-    modelCategoria.findOne({attributes:['cod_categoria', 'nome_categoria'],where:{CPF}})
+    modelCategoria.findOne({attributes:['CPF', 'Endereço'],where:{CPF}})
     .then(
         (response)=>{
             return res.status(200).json({
