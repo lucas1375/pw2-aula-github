@@ -1,4 +1,4 @@
-//IMPORTAÇÃO DO PACOTE SEQUELIZE
+//IMPORTAÇÃO DO PACOTE SEQUELIZ
 const Sequelize = require('sequelize');
 
 //IMPORTAÇÃO DO ARQUIVO DE CONEXÃO COM O BANCO DE DADOS
@@ -13,27 +13,19 @@ PARAMETROS DO MÉTODO DEFINE
                 REGRAS DO CAMPO DA TABELA (NULL, NOT NULL, DEFAULT...ETC)
 */
 const modelCategoria = connection.define(
-    'Cliente',
+    'tbl_Cliente',
+    
     {
-        CPF:{
-
+        cod_cliente:{
             type: Sequelize.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement:true
+        },
+        nome_cliente:{
+            type: Sequelize.STRING(100),
+            allowNull: false
         },
         
-        Nome:{
-            type: Sequelize.STRING(100),
-            allowNull: true
-        },
-
-        cod_cliente:{
-
-            type: Sequelize.INTEGER,
-            allowNull: true
-           
-        },
-
         RG:{
 
             type: Sequelize.INTEGER,
@@ -48,6 +40,8 @@ const modelCategoria = connection.define(
            
         },
     }
+
+        
 );
 
 modelCategoria.sync({force:true});

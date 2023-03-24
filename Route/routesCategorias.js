@@ -12,10 +12,10 @@ const router = express.Router();
 router.post('/cadastrarCategoria', (req, res)=>{
     console.log(req.body);
     // let nome_categoria = req.body.nome_categoria;
-    let {CPF} = req.body;
+    let {nome_cliente} = req.body;
     modelCategoria.create(
         //DADOS DA INSERÇÂO
-        {CPF}
+        {nome_cliente}
     ).then(
         ()=>{
             return res.status(201).json({
@@ -64,13 +64,13 @@ router.get('/listarCategoria', (req, res)=>{
 });
 
 //ROTA DE LISTAGEM DE CATEGORIA POR COD_CATEGORIA
-router.get('/listarCategoriaPK/:CPF', (req, res)=>{
+router.get('/listarCategoriaPK/:cod_cliente', (req, res)=>{
 
     //DECLARAR E RECEBER O DADO DE CODIGO DE CATEGORIA
-    let {CPF} = req.params;
+    let {cod_cliente} = req.params;
 
     //AÇÃO DE SELEÇÃO DE DADOS DO SEQUELIZE
-    modelCategoria.findByPk(CPF)
+    modelCategoria.findByPk(cod_cliente)
     .then(
         (response)=>{
             return res.status(200).json({
@@ -93,11 +93,11 @@ router.get('/listarCategoriaPK/:CPF', (req, res)=>{
 });
 
 //ROTA DE LISTAGEM DE CATEGORIA POR NOME_CATEGORIA
-router.get('/listarCategoriaNOME/:CPF', (req, res)=>{
+router.get('/listarCategoriaNOME/:nome_cliente', (req, res)=>{
 
-    let {CPF} = req.params;
+    let {nome_cliente} = req.params;
 
-    modelCategoria.findOne({attributes:['CPF', 'Endereço'],where:{CPF}})
+    modelCategoria.findOne({attributes:['cod_cliente', 'nome_cliente'],where:{nome_cliente}})
     .then(
         (response)=>{
             return res.status(200).json({
@@ -124,11 +124,11 @@ router.put('/alterarCategoria', (req, res)=>{
 
     // const cod_categoria = req.body.cod_categoria;
     // const nome_categoria = req.body.nome_categoria;
-    const {CPF, Endereço} = req.body;
+    const {cod_cliente, nome_cliente} = req.body;
 
     modelCategoria.update(
-        {CPF},
-        {where:{Endereço}}
+        {nome_cliente},
+        {where:{cod_cliente}}
     ).then(
         ()=>{
             return res.status(200).json({
@@ -149,12 +149,12 @@ router.put('/alterarCategoria', (req, res)=>{
 });
 
 //ROTA DE EXCLUSÃO DE CATEGORIA
-router.delete('/excluirCategoria/:CPF', (req, res)=>{
+router.delete('/excluirCategoria/:cod_categoria', (req, res)=>{
     console.log(req.params);
-    let {CPF} = req.params
+    let {cod_cliente} = req.params
 
     modelCategoria.destroy(
-        {where:{CPF}}
+        {where:{cod_cliente}}
     ).then(
         ()=>{
             return res.status(200).json({
@@ -174,3 +174,5 @@ router.delete('/excluirCategoria/:CPF', (req, res)=>{
 });
 
 module.exports = router;
+
+
