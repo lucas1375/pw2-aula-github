@@ -39,7 +39,7 @@ router.post('/cadastrarCategoria', (req, res)=>{
 });
 
 //ROTA DE LISTAGEM DE CATEGORIA SEM CRITÉRIO
-router.get('/listarCategoria', (req, res)=>{
+router.get('/listarCategorias', (req, res)=>{
 
     modelCategoria.findAll()
         .then(

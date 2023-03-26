@@ -13,7 +13,7 @@ PARAMETROS DO MÉTODO DEFINE
                 REGRAS DO CAMPO DA TABELA (NULL, NOT NULL, DEFAULT...ETC)
 */
 const modelCategoria = connection.define(
-    'tbl_Cliente',
+    'bd_cliente',
     
     {
         cod_cliente:{
@@ -26,19 +26,10 @@ const modelCategoria = connection.define(
             allowNull: false
         },
         
-        RG:{
+        
+       
 
-            type: Sequelize.INTEGER,
-            allowNull: true
-          
-        },
-
-        Endereço:{
-
-            type: Sequelize.INTEGER,
-            allowNull: true
-           
-        },
+       
     }
 
         
