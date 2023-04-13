@@ -149,7 +149,7 @@ router.put('/alterarCategoria', (req, res)=>{
 });
 
 //ROTA DE EXCLUSÃO DE CATEGORIA
-router.delete('/excluirCategoria/:cod_categoria', (req, res)=>{
+router.delete('/excluirCategoria/:cod_cliente', (req, res)=>{
     console.log(req.params);
     let {cod_cliente} = req.params
 
